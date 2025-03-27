@@ -1,0 +1,167 @@
+<template>
+
+    <lightning-card class="choices-fields">
+
+        <button aria-live="polite" type="button" onclick={handleShowSelected} aria-atomic="true"
+            class="showSelectedProducts slds-button slds-button info"
+            data-aura-rendered-by="3422:0"><!--render facet: 3423:0-->{showSelectedProducts}
+            ({countOfSelectedProducts})<!--render facet: 3426:0--></button>
+
+        <lightning-button class="clear-filters-button" variant="brand-outline" label="Clear Filters"
+            title="ClearFilters" onclick={handleClearFilters} hidden></lightning-button>
+
+        <div class="Product-Quick-Picks">
+            <h2 class="Product-Quick-Pick-Header">
+                Quick Picks
+                <lightning-helptext content="Quickly filter by the most commonly sold products"></lightning-helptext>
+            </h2>
+            <lightning-input class="QP-Choices" type="checkbox" label="Unlimited for SF" value="SFDCUNL22"
+                onchange={handleFilterSelections}></lightning-input>
+            <lightning-input class="QP-Choices" type="checkbox" label="Accelerate" value="SF-ACCEL-SBS"
+                onchange={handleFilterSelections}></lightning-input>
+            <lightning-input class="QP-Choices" type="checkbox" label="Archive for SF" value="ARCH_PUPM22"
+                onchange={handleFilterSelections}></lightning-input>
+            <lightning-input class="QP-Choices" type="checkbox" label="Secure for SF" value="SFDCSEC"
+                onchange={handleFilterSelections}></lightning-input>
+            <lightning-input class="QP-Choices" type="checkbox" label="BYOK" value="AKM22"
+                onchange={handleFilterSelections}></lightning-input>
+            <lightning-input class="QP-Choices" type="checkbox" label="TAM" value="TAMMIN"
+                onchange={handleFilterSelections}></lightning-input>
+            <lightning-input class="QP-Choices" type="checkbox" label="Premier" value="CSP"
+                onchange={handleFilterSelections}></lightning-input>
+            <lightning-input class="QP-Choices" type="checkbox" label="Premier Plus" value="CSP3MIN"
+                onchange={handleFilterSelections}></lightning-input>
+        </div>
+
+        <div class="Product-Family-Checkboxes">
+            <h2 class="Product-Family-Header">
+                Product Family
+                <lightning-helptext content="Filter by the Product Family field"></lightning-helptext>
+            </h2>
+            <lightning-input class="PF-Choices" type="checkbox" label="Backup" value="Backup"
+                onchange={handleFilterSelections}></lightning-input>
+            <lightning-input class="PF-Choices" type="checkbox" label="Accelerate" value="Sandbox Seeding"
+                onchange={handleFilterSelections}></lightning-input>
+            <lightning-input class="PF-Choices" type="checkbox" label="Archive" value="Archive"
+                onchange={handleFilterSelections}></lightning-input>
+            <lightning-input class="PF-Choices" type="checkbox" label="Secure" value="Security"
+                onchange={handleFilterSelections}></lightning-input>
+            <lightning-input class="PF-Choices" type="checkbox" label="Services" value="Services"
+                onchange={handleFilterSelections}></lightning-input>
+            <lightning-input class="PF-Choices" type="checkbox" label="High Frequency" value="High Frequency"
+                onchange={handleFilterSelections}></lightning-input>
+        </div>
+
+        <div class="Serivce-Product-Checkboxes" hidden>
+            <h2 class="Service-Option-Header">
+                Service Products
+                <lightning-helptext content="Filter by Service Products"></lightning-helptext>
+            </h2>
+            <lightning-input class="SO-Choices" type="checkbox" label="TAM" value="TAM"
+                onchange={handleFilterSelections}></lightning-input>
+            <lightning-input class="SO-Choices" type="checkbox" label="Premier" value="CSP"
+                onchange={handleFilterSelections}></lightning-input>
+            <lightning-input class="SO-Choices" type="checkbox" label="Premier Plus" value="CSPP"
+                onchange={handleFilterSelections}></lightning-input>
+            <lightning-input class="SO-Choices" type="checkbox" label="Archive" value="APS"
+                onchange={handleFilterSelections}></lightning-input>
+            <lightning-input class="SO-Choices" type="checkbox" label="Secure" value="SOP"
+                onchange={handleFilterSelections}></lightning-input>
+        </div>
+
+        <div class="Additional-Backup-Products-Checkboxes" hidden>
+            <h2 class="Additional-Backup-Products-Header">
+                Additional Backup Products
+                <lightning-helptext content="Filter within the Backup product family"></lightning-helptext>
+            </h2>
+            <!-- <lightning-input class="CO-Choices" type="checkbox" label="Community" value="Community" onchange={handleFilterSelections}></lightning-input> -->
+            <lightning-input class="ABP-Choices" type="checkbox" label="Unlimted" value="unlimited"
+                onchange={handleFilterSelections}></lightning-input>
+            <lightning-input class="ABP-Choices" type="checkbox" label="Professional" value="professional"
+                onchange={handleFilterSelections}></lightning-input>
+            <lightning-input class="ABP-Choices" type="checkbox" label="Enterprise" value="enterprise"
+                onchange={handleFilterSelections}></lightning-input>
+            <lightning-input class="ABP-Choices" type="checkbox" label="Essential" value="essential"
+                onchange={handleFilterSelections}></lightning-input>
+            <lightning-input class="ABP-Choices" type="checkbox" label="Cust Comm Login" value="Cust Comm Login"
+                onchange={handleFilterSelections}></lightning-input>
+            <lightning-input class="ABP-Choices" type="checkbox" label="Cust Comm Login Bundle"
+                value="Cust Comm Login Bundle" onchange={handleFilterSelections}></lightning-input>
+            <lightning-input class="ABP-Choices" type="checkbox" label="Cust Comm Member" value="Cust Comm Member"
+                onchange={handleFilterSelections}></lightning-input>
+            <lightning-input class="ABP-Choices" type="checkbox" label="Cust Comm+ Member" value="Cust Comm Plus Member"
+                onchange={handleFilterSelections}></lightning-input>
+            <lightning-input class="ABP-Choices" type="checkbox" label="Cust Comm+ Login" value="Cust Comm Plus Login"
+                onchange={handleFilterSelections}></lightning-input>
+            <lightning-input class="ABP-Choices" type="checkbox" label="Cust Comm+ Bundle" value="Cust Comm Plus Bundle"
+                onchange={handleFilterSelections}></lightning-input>
+            <lightning-input class="ABP-Choices" type="checkbox" label="Partner Comm Login" value="Partner Comm Login"
+                onchange={handleFilterSelections}></lightning-input>
+            <lightning-input class="ABP-Choices" type="checkbox" label="Partner Comm Login Bundle"
+                value="Partner Comm Login Bundle" onchange={handleFilterSelections}></lightning-input>
+            <lightning-input class="ABP-Choices" type="checkbox" label="Partner Comm Member" value="Partner Comm Member"
+                onchange={handleFilterSelections}></lightning-input>
+        </div>
+
+
+        <div class="Product-Ecosystem-Checkboxes">
+            <h2 class="Product-Ecosystem-Header">
+                Ecosystem
+                <lightning-helptext content="Filter by the Ecosystem field"></lightning-helptext>
+            </h2>
+            <lightning-input class="PE-Choices" type="checkbox" label="Salesforce" value="Salesforce"
+                onchange={handleFilterSelections}></lightning-input>
+            <lightning-input class="PE-Choices" type="checkbox" label="ServiceNow" value="ServiceNow"
+                onchange={handleFilterSelections}></lightning-input>
+            <lightning-input class="PE-Choices" type="checkbox" label="Dynamics" value="MS Dynamics 365"
+                onchange={handleFilterSelections}></lightning-input>
+        </div>
+
+        <div class="Instance-Type-Checkboxes">
+            <h2 class="Instance-Type-Header">
+                Instance Type
+                <lightning-helptext content="Filter by Standard Products or FedRamp Products"></lightning-helptext>
+            </h2>
+            <lightning-input class="Instance-Choices" type="checkbox" label="Standard" value="Standard"
+                onchange={handleFilterSelections}></lightning-input>
+            <lightning-input class="Instance-Choices" type="checkbox" label="FedRamp" value="FedRamp"
+                onchange={handleFilterSelections}></lightning-input>
+        </div>
+
+    </lightning-card>
+
+    <lightning-card class="datatablecontainer">
+        <div class="buttons">
+            <lightning-button class="edit-products" variant="brand" label="Edit Products" title="Continue"
+                onclick={handleSave} icon-name="utility:edit" icon-position="left"></lightning-button>
+            <lightning-button variant="brand" label="Cancel" type="cancel" onclick={handleCancel}
+                icon-name="utility:back" icon-position="left"></lightning-button>
+        </div>
+        <div class="search-box">
+            <lightning-input type="text" label="Product Search" onchange={handleSearch}
+                placeholder="search by the product name..." minlength="3"></lightning-input>
+        </div>
+        <lightning-datatable name="datatable" key-field="Id" data={productData} sorted-direction={sortDirection}
+            sorted-by={sortedBy} onsort={handleSortData} selected-rows={selectedProducts}
+            onrowselection={handleRowSelection} columns={columns}>
+        </lightning-datatable>
+    </lightning-card>
+
+    <template if:true={isConfirmationModalOpen}>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+        <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+    
+          <div class="slds-modal__container">
+            <header class="slds-modal__header">
+              <h2 class="slds-text-heading_small">Are you sure you want to return to the Opportunity record details page without saving your changes?</h2>
+            </header>
+           
+            <footer class="slds-modal__footer">
+              <lightning-button class="okButtonCls" variant="brand" label="Yes" title="Yes" onclick={handleOk}></lightning-button>
+              <lightning-button variant="neutral" label="Cancel" title="Cancel" onclick={handleConfirmationCancel}></lightning-button>
+          </footer>
+          </div>
+        </section>
+    </template>
+
+</template>
