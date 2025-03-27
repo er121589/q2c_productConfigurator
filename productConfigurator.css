@@ -1,0 +1,127 @@
+.Div-Page-Title {
+    width: 200px;
+}
+.Page-Title {
+    font-weight: bold;
+    font-size: x-large;
+    padding-block: 3px;
+    color: midnightblue;
+    text-decoration: underline;
+    margin-left: 10px;
+    display: block;
+    width: 200px;
+}
+
+.choices-fields {
+    float: inline-start;
+    margin-top: 6px;
+    color: rgb(194,57,53);
+    width: 12%; 
+}
+
+.Product-Quick-Pick-Header {
+    width: 140px;
+    padding-top: 10px;
+    padding-left: 10px;
+    font-weight: bold;
+}
+
+.Product-Family-Header {
+    width: 140px;
+    padding-left: 10px;
+    padding-top:10px;
+    font-weight: bold;
+}
+
+.Service-Option-Header {
+    width: 140px;
+    padding-left: 10px;
+    padding-top:10px;
+    font-weight: bold;
+}
+
+.Additional-Backup-Products-Header {
+    width: 230px;
+    padding-left: 10px;
+    padding-top:10px;
+    font-weight: bold;
+}
+
+.ABP-Choices {
+    width: 230px;
+    padding-left: 10px; 
+}
+
+.SO-Choices {
+    width: 140px;
+    padding-left: 10px;  
+}
+
+.QP-Choices {
+    width: 140px;
+    padding-left: 10px;
+}
+
+.PF-Choices {
+    width: 140px;
+    padding-left: 10px;
+}
+
+.Product-Ecosystem-Header {
+    width: 140px;
+    padding-left: 10px;
+    padding-top:10px;
+    font-weight: bold;
+}
+
+.PE-Choices {
+    width: 140px;
+    padding-left: 10px;
+}
+
+.Instance-Type-Header {
+    width: 140px;
+    padding-left: 10px;
+    padding-top: 10px;
+    font-weight: bold;
+}
+
+.Instance-Choices {
+    width: 140px;
+    padding-left: 10px;
+}
+
+.datatablecontainer {
+    float: right;
+    width: 88%;
+    padding: 5px;
+}
+
+.buttons {
+    float: right;
+    position: relative;
+    bottom: 15px;
+    margin-right: 10px;
+}
+
+.edit-products {
+    margin: 2px;
+}
+
+.clear-filters-button {
+    padding-left: 10px;
+}
+
+.search-box {
+    /* padding-left: 170px; */
+    font-weight: bold;
+    padding-bottom: 15px;
+    width: 450px;
+    margin: auto;
+    /* width: 92%;
+    float: right; */
+}
+
+.okButtonCls {
+    padding: 7px;
+}
