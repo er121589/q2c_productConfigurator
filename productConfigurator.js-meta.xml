@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>58.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="selectedPriceBookEntries" type="string" label="Output Selected Rows (Ids)" role="outputOnly"/>
+            <propertyType name="T" extends="SObject" label="Input Type"/>
+            <property name="outputSelectedRows" type="{T[]}" label="Output Selected Rows (Collection)" role="outputOnly" description="Record Collection variable to contain only the records that were selected in the datatable." />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>
